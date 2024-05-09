@@ -1,0 +1,6 @@
+TAR_PROJECT="speed"
+
+# next two options are to minimize renv overhear for targets workers
+# https://books.ropensci.org/targets/packages.html#package-management-with-renv
+RENV_CONFIG_SANDBOX_ENABLED=false
+RENV_CONFIG_SYNCHRONIZED_CHECK=false

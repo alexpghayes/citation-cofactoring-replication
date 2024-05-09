@@ -1,0 +1,12 @@
+analysis:
+  script: _analysis.R
+  store: _analysis
+  reporter_make: timestamp_positives
+simulations:
+  script: _simulations.R
+  store: _simulations
+  reporter_make: timestamp_positives
+speed:
+  script: _speed.R
+  store: _speed
+  reporter_make: timestamp_positives
