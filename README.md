@@ -1,6 +1,6 @@
 # Replication package for Co-factor analysis of citation networks
 
-One compelling use of citation networks is to characterize papers by their relationships to the surrounding literature. We propose a method to characterize papers by embedding them into two distinct ``co-factor'' spaces: one describing how papers send citations, and the other describing how papers receive citations. This approach presents several challenges. First, older documents cannot cite newer documents, and thus it is not clear that co-factors are even identifiable. We resolve this challenge by developing a co-factor model for asymmetric adjacency matrices with missing lower triangles and showing that identification is possible. We then frame estimation as a matrix completion problem and develop a specialized implementation of matrix completion because prior implementations are memory bound in our setting. Simulations show that our estimator has promising finite sample properties, and that naive approaches fail to recover latent co-factor structure. We leverage our estimator to investigate 255,780 papers published in statistics journals from 1898 to 2024, resulting in the most comprehensive topic model of the statistics literature to date. We find interpretable co-factors corresponding to many statistical subfields, including time series, variable selection, spatial methods, graphical models, GLM(M)s, causal inference, multiple testing, quantile regression, semi-parametrics, dimension reduction, and several more.
+One compelling use of citation networks is to characterize papers by their relationships to the surrounding literature. We propose a method to characterize papers by embedding them into two distinct co-factor spaces: one describing how papers send citations, and the other describing how papers receive citations. This approach presents several challenges. First, older documents cannot cite newer documents, and thus it is not clear that co-factors are even identifiable. We resolve this challenge by developing a co-factor model for asymmetric adjacency matrices with missing lower triangles and showing that identification is possible. We then frame estimation as a matrix completion problem and develop a specialized implementation of matrix completion because prior implementations are memory bound in our setting. Simulations show that our estimator has promising finite sample properties, and that naive approaches fail to recover latent co-factor structure. We leverage our estimator to investigate 255,780 papers published in statistics journals from 1898 to 2024, resulting in the most comprehensive topic model of the statistics literature to date. We find interpretable co-factors corresponding to many statistical subfields, including time series, variable selection, spatial methods, graphical models, GLM(M)s, causal inference, multiple testing, quantile regression, semi-parametrics, dimension reduction, and several more.
 
 ## To replicate our computational results
 
@@ -36,29 +36,29 @@ tar_make()
 ```r
 .
 ├── R
-│   ├── analysis-create-graph.R      --  TOOD
-│   ├── analysis-estimators.R        --  TODO
-│   ├── analysis-forward-citation.R  --  TODO
-│   ├── analysis-interpret-vsp.R     --  TODO
-│   ├── analysis-keywords.R          --  TODO
-│   ├── simulation-estimators.R      --  TODO
-│   ├── simulation-loss.R            --  TODO
-│   ├── simulation-models.R          --  TODO
-│   └── simulation-vsp.R             --  TODO
-├── README.md                        --  TODO
-├── _analysis                        --  TODO  
-├── _analysis.R                      --  TODO
-├── _simulations                     --  TODO
-├── _simulations.R                   --  TODO
-├── _speed                           --  TODO
-├── _speed.R                         --  TODO
-├── _targets.yaml                    --  TODO
-├── citation-cofactoring.Rproj       --  TODO
-├── figures              
-│   ├── performance                  --  TODO
-│   └── simulations                  --  TODO
-├── renv                             --  TODO
-├── renv.lock                        --  TODO
+│   ├── analysis-create-graph.R      --  Construct tidygraph object from WoS data extract
+│   ├── analysis-estimators.R        --  Estimators for data analysis
+│   ├── analysis-forward-citation.R  --  Postprocess imputed forward citations
+│   ├── analysis-interpret-vsp.R     --  Create hub tables and plot diagnostics
+│   ├── analysis-keywords.R          --  Create keyword tables
+│   ├── simulation-estimators.R      --  Estimators for simulation
+│   ├── simulation-loss.R            --  Loss calculations
+│   ├── simulation-models.R          --  Simulation models
+│   └── simulation-vsp.R             --  Align true and estimated factors
+├── README.md                        
+├── _analysis                        --  [targets]  
+├── _analysis.R                      --  Define data analysis pipeline
+├── _simulations                     --  [targets]
+├── _simulations.R                   --  Define simulation pipeline
+├── _speed                           --  [targets]
+├── _speed.R                         --  Define performance comparison pipeline
+├── _targets.yaml                    --  [targets]
+├── citation-cofactoring.Rproj       
+├── figures                          --  Contains outputs from simulations and performance comparison
+│   ├── performance                  
+│   └── simulations                  
+├── renv                             --  [renv]
+├── renv.lock                        --  [renv]
 └── src
-    └── estimate-degrees.cpp         --  TODO
+    └── estimate-degrees.cpp         --  Impute forward citations
 ```
