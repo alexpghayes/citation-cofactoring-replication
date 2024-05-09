@@ -33,7 +33,7 @@ tar_make()
 ```
 ## Contents
 
-```r
+```
 .
 ├── R
 │   ├── analysis-create-graph.R      --  Construct tidygraph object from WoS data extract
